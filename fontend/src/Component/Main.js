@@ -17,7 +17,7 @@ function Main() {
   const fetchAlldata = async () => {
     setfetchload(true);
 
-    const apidata = await axios.get("http://localhost:9000/");
+    const apidata = await axios.get("https://todo-app-eyi3.onrender.com/");
     settodolist(apidata.data.data);
     setfetchload(false);
   };
@@ -30,7 +30,7 @@ function Main() {
     if (updata.length == 0) return seterrmsg("Field is Emty");
 
     let temdata = await axios.put(
-      `http://localhost:9000/update/${updateinp.id}`,
+      `https://todo-app-eyi3.onrender.com/update/${updateinp.id}`,
       {
         listName: updata,
       }
@@ -60,7 +60,7 @@ function Main() {
     if (data.length == 0) return seterrmsg("Field is Emty");
     setfetchload(true);
 
-    const apival = await axios.post("http://localhost:9000/create", {
+    const apival = await axios.post("https://todo-app-eyi3.onrender.com/create", {
       listName: data,
       readed: false,
     });

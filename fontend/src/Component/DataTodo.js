@@ -10,7 +10,7 @@ function DataTodo(props) {
 
   const deleteData = async (id) => {
     const temdata = await axios.delete(
-      `http://localhost:9000/deleteData/${id}`
+      `https://todo-app-eyi3.onrender.com/deleteData/${id}`
     );
 
     temdata.data.status && setsucmsg({ status: true, msg: temdata.data.msg });
@@ -19,7 +19,7 @@ function DataTodo(props) {
   };
 
   const readedEnable = async (id, current_state) => {
-    let updata = await axios.put(`http://localhost:9000/update/${id}`, {
+    let updata = await axios.put(`https://todo-app-eyi3.onrender.com/update/${id}`, {
       readed: !current_state,
     });
 
